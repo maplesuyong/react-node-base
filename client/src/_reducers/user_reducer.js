@@ -1,9 +1,13 @@
-import { LOGIN_USER } from "../_actions/types"
+import { LOGIN_USER, REGISTER_USER, AUTH_USER } from "../_actions/types"
 
-const user_reducer = (state = { email: 'suyong0507@gmail.com', password: '111111'}, action) => {
+const user_reducer = (state = {}, action) => {
   switch (action.type) {
     case LOGIN_USER:
       return {...state, loginSuccess: action.payload}
+    case REGISTER_USER:
+      return {...state, register: action.payload}
+    case AUTH_USER:
+      return {...state, userData: action.payload}
     default:
       return state
   }
